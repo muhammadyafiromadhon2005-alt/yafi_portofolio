@@ -103,7 +103,51 @@ nav a{
   opacity:0.1;
   z-index:-2;
 }
+/* WALLET */
+.wallet-card{
+  max-width:350px;
+  margin:40px auto;
+  padding:20px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(15px);
+  box-shadow:0 0 20px #00f7ff30;
+}
 
+.token{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 0;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.token:last-child{
+  border-bottom:none;
+}
+
+.icon{
+  width:40px;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:10px;
+  margin-right:10px;
+  font-size:18px;
+}
+
+/* warna tiap token */
+.scfb{background:#3cff00;}
+.pol{background:#7b3cff;}
+.bnb{background:#ffb300;}
+/*Hover*/
+  .wallet-card:hover{
+  box-shadow:0 0 30px #00f7ff;
+  transform:scale(1.03);
+  transition:0.3s;
+}
+  
 /* SECTION */
 section{
   padding:120px 10%;
