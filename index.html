@@ -159,6 +159,33 @@ footer{
   <button class="btn" onclick="scrollToSection('projects')">Explore</button>
 </section>
 
+<section id="wallet">
+  <h2>Wallet Overview</h2>
+
+  <div class="wallet-card">
+    <div class="token">
+      <div class="icon scfb">💵</div>
+      <div>
+        <h3>5.0288 $CFB</h3>
+      </div>
+    </div>
+
+    <div class="token">
+      <div class="icon pol">🟣</div>
+      <div>
+        <h3>0 $POL</h3>
+      </div>
+    </div>
+
+    <div class="token">
+      <div class="icon bnb">🟡</div>
+      <div>
+        <h3>0.00000109 $BNB</h3>
+      </div>
+    </div>
+  </div>
+</section>
+  
 <section id="projects">
   <h2>Projects</h2>
   <div class="cards">
@@ -206,7 +233,7 @@ fetch('https://api.github.com/users/muhammadyafiromadhon2005-alt/repos')
       <div class="card">
         <h3>${repo.name}</h3>
         <p>${repo.description || 'No description'}</p>
-        <a href="${repo.html_url}" target="_blank">View</a>
+        <a href="${repo.html_url}" target="_blank">View</a>sayav
       </div>
     `
   })
