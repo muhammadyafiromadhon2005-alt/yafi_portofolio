@@ -15,7 +15,7 @@ Selamat datang di repositori portofolio saya! Repositori ini berisi kumpulan pro
 
 ## 🔗 Demo Live
 Anda dapat melihat portofolio saya yang sudah online di sini:
-👉 **[https://github.com/muhammadyafiromadhon2005-alt/yafi_portofolio.git]**
+👉 **https://muhammadyafiromadhon2005-alt.github.io/yafi_portofolio/**
 
 ---
 *Dibuat dengan ❤️ oleh [muhammad yafi romadhon]*
