@@ -63,6 +63,12 @@ nav a{
   margin-left:20px;
   color:white;
   text-decoration:none;
+  cursor:pointer;
+}
+
+nav a:hover{
+  color:#00f7ff;
+  transition:0.3s;
 }
 
 /* HERO */
@@ -73,6 +79,7 @@ nav a{
   justify-content:center;
   align-items:center;
   text-align:center;
+  margin-top:80px;
 }
 
 .hero h1{
@@ -90,6 +97,14 @@ nav a{
   border-radius:30px;
   background:linear-gradient(90deg,#00f7ff,#8a2be2);
   cursor:pointer;
+  color:black;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn:hover{
+  box-shadow:0 0 20px #00f7ff;
+  transform:scale(1.05);
 }
 
 /* GRID BG */
@@ -103,55 +118,18 @@ nav a{
   opacity:0.1;
   z-index:-2;
 }
-/* CHAINERS WEB FARM */
-.wallet-card{
-  max-width:350px;
-  margin:40px auto;
-  padding:20px;
-  border-radius:20px;
-  background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(15px);
-  box-shadow:0 0 20px #00f7ff30;
-}
 
-.token{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:10px 0;
-  border-bottom:1px solid rgba(255,255,255,0.1);
-}
-
-.token:last-child{
-  border-bottom:none;
-}
-
-.icon{
-  width:40px;
-  height:40px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:10px;
-  margin-right:10px;
-  font-size:18px;
-}
-
-/* warna tiap token */
-.scfb{background:#3cff00;}
-.pol{background:#7b3cff;}
-.bnb{background:#ffb300;}
-/*Hover*/
-  .wallet-card:hover{
-  box-shadow:0 0 30px #00f7ff;
-  transform:scale(1.03);
-  transition:0.3s;
-}
-  
 /* SECTION */
 section{
   padding:120px 10%;
   text-align:center;
+}
+
+section h2{
+  font-size:40px;
+  font-family:Orbitron;
+  margin-bottom:40px;
+  color:#00f7ff;
 }
 
 /* PROJECT */
@@ -171,6 +149,18 @@ section{
 .card:hover{
   transform:scale(1.05);
   box-shadow:0 0 25px #00f7ff;
+}
+
+.card a{
+  color:#00f7ff;
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+  margin-top:10px;
+}
+
+.card a:hover{
+  text-decoration:underline;
 }
 
 /* FOOTER */
@@ -203,43 +193,24 @@ footer{
   <button class="btn" onclick="scrollToSection('projects')">Explore</button>
 </section>
 
-<section id="wallet">
-  <h2>Chainers Web Farm</h2>
-
-  <div class="wallet-card">
-    <div class="token">
-      <div class="icon scfb">💵</div>
-      <div>
-        <h3>11.0672 $CFB</h3>
-      </div>
-    </div>
-
-    <div class="token">
-  <div class="icon pol">
-    <img src="Polygon_Icon.svg" alt="POL Logo" width="24" height="24">
-  </div>
-  <div>
-    <h3>0 $POL</h3>
-  </div>
-</div>
-
-     <div class="token">
-  <div class="icon pol">
-    <img src="bnb-svgrepo-com.svg" alt="BNB Logo" width="24" height="24">
-  </div>
-  <div>
-    <h3>0.00000168 $BNB</h3>
-  </div>
-</div>
-
-</section>
-  
 <section id="projects">
   <h2>Projects</h2>
   <div class="cards">
-    <div class="card">Web3 Portfolio</div>
-    <div class="card">AI Automation</div>
-    <div class="card">3D Game Dev</div>
+    <div class="card">
+      <h3>Web3 Portfolio</h3>
+      <p>Decentralized portfolio management system</p>
+      <a href="#" onclick="goToWeb3Profile()">View Profile</a>
+    </div>
+    <div class="card">
+      <h3>AI Automation</h3>
+      <p>Intelligent automation with machine learning</p>
+      <a href="#" onclick="goToAIAutomation()">View Project</a>
+    </div>
+    <div class="card">
+      <h3>3D Game Dev</h3>
+      <p>Next-gen game development platform</p>
+      <a href="#" onclick="goTo3DGameDev()">View Project</a>
+    </div>
   </div>
 </section>
 
@@ -255,14 +226,40 @@ footer{
 <script>
 
 // LOADER
-window.onload = () => {
+window.addEventListener('load', () => {
   document.getElementById('loader').style.display='none'
-}
+})
 
 // SCROLL
 function scrollToSection(id){
   document.getElementById(id).scrollIntoView({behavior:'smooth'})
 }
+
+// GO TO WEB3 PROFILE
+function goToWeb3Profile(){
+  window.open('https://web3.career/@yafi2005', '_blank')
+}
+
+// GO TO AI AUTOMATION PROJECT
+function goToAIAutomation(){
+  window.open('https://your-ai-automation-link.com', '_blank')
+  // Ganti dengan link project AI Automation kamu
+}
+
+// GO TO 3D GAME DEV PROJECT
+function goTo3DGameDev(){
+  window.open('https://your-3d-game-dev-link.com', '_blank')
+  // Ganti dengan link project 3D Game Dev kamu
+}
+
+// NAV LINKS CLICK
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault()
+    const id = link.getAttribute('href').substring(1)
+    scrollToSection(id)
+  })
+})
 
 // CUSTOM CURSOR
 const cursor = document.getElementById('cursor')
@@ -277,15 +274,17 @@ fetch('https://api.github.com/users/muhammadyafiromadhon2005-alt/repos')
 .then(data=>{
   const repoList=document.getElementById('repoList')
   data.slice(0,6).forEach(repo=>{
-    repoList.innerHTML += `
-      <div class="card">
-        <h3>${repo.name}</h3>
-        <p>${repo.description || 'No description'}</p>
-        <a href="${repo.html_url}" target="_blank">View</a>sayav
-      </div>
+    const cardDiv = document.createElement('div')
+    cardDiv.className = 'card'
+    cardDiv.innerHTML = `
+      <h3>${repo.name}</h3>
+      <p>${repo.description || 'No description'}</p>
+      <a href="${repo.html_url}" target="_blank">View Repository</a>
     `
+    repoList.appendChild(cardDiv)
   })
 })
+.catch(err=>console.error('GitHub fetch error:', err))
 
 </script>
 
