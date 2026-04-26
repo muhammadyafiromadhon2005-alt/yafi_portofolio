@@ -1,10 +1,10 @@
 # My Personal Portfolio 🚀
 
-Selamat datang di repositori portofolio saya! Repositori ini berisi kumpulan proyek terbaik, pengalaman kerja, dan keahlian teknis yang saya miliki sebagai seorang **[Sebutkan Peran Anda, misal: Fullstack Developer / UI Designer]**.
+Selamat datang di repositori portofolio saya! Repositori ini berisi kumpulan proyek terbaik, pengalaman kerja, dan keahlian teknis yang saya miliki sebagai seorang **[Fullstack Developer / UI Designer]**.
 
 ## 💻 Tech Stack
-- **Frontend:** HTML, CSS, JavaScript, [Misal: React / Tailwind CSS]
-- **Backend:** [Misal: Node.js / Laravel]
+- **Frontend:** HTML, CSS, JavaScript, [Tailwind CSS]
+- **Backend:** [Node.js]
 - **Tools:** Git, Figma, VS Code
 
 ## ✨ Fitur Utama
